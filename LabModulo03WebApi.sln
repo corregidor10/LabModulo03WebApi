@@ -1,9 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabModulo03WebApi", "LabModulo03WebApi\LabModulo03WebApi.csproj", "{7A1DE4E2-E054-4D5A-AD4D-221D975F44FE}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebLab03", "..\..\..\Documents\Visual Studio 2015\Projects\WebLab03\", "{CA0E91A0-0436-419B-98E1-AF443ADB908E}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51868"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\Documents\Visual Studio 2015\Projects\WebLab03\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51868\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51868"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\Documents\Visual Studio 2015\Projects\WebLab03\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51868\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51868"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +35,10 @@ Global
 		{7A1DE4E2-E054-4D5A-AD4D-221D975F44FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A1DE4E2-E054-4D5A-AD4D-221D975F44FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A1DE4E2-E054-4D5A-AD4D-221D975F44FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA0E91A0-0436-419B-98E1-AF443ADB908E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA0E91A0-0436-419B-98E1-AF443ADB908E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA0E91A0-0436-419B-98E1-AF443ADB908E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA0E91A0-0436-419B-98E1-AF443ADB908E}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
