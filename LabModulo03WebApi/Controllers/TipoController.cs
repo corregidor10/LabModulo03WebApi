@@ -6,14 +6,16 @@ using System.Net;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using LabModulo03WebApi.Models;
 
 namespace LabModulo03WebApi.Controllers
 {
+    [EnableCors(origins:"*", headers:"*", methods:"*")]
     public class TipoController : ApiController
     {
-        private Concesionario20Entities db= new Concesionario20Entities();
+        public Concesionario20Entities db= new Concesionario20Entities();
         
         
 
@@ -21,13 +23,19 @@ namespace LabModulo03WebApi.Controllers
         {
             return db.Tipo.ToList();
         }
+
         [ResponseType(typeof(Tipo))]
         public IHttpActionResult GetTipos(int id)
         {
-            var a=db.Tipo.Find(id);
+            //var a=db.Tipo.Find(id);
 
-            return Ok(a);
-
+            //return Ok(a);
+            Tipo tipo = db.Tipo.Find(id);
+            if (tipo==null)
+            {
+                return NotFound();
+            }
+            return Ok(tipo);
         }
 
         public List<Tipo> GetTiposPorNombre(String nombre)
@@ -55,14 +63,15 @@ namespace LabModulo03WebApi.Controllers
             {
                 db.SaveChanges();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Console.WriteLine("Error al Guardar");
             }
 
-            return Ok();
+            return StatusCode(HttpStatusCode.NoContent);
         }
 
+        [ResponseType(typeof(Tipo))]
         public IHttpActionResult PostTipo(Tipo tipo)
         {
 
@@ -71,20 +80,11 @@ namespace LabModulo03WebApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Entry(tipo).State=EntityState.Added;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error al Crear");
-            }
-
-            return Ok();
+            db.Tipo.Add(tipo);
+            db.SaveChanges();
+            return CreatedAtRoute("DefaultApi", new {id = tipo.IdTipo}, tipo);
         }
-
+        [ResponseType(typeof(Tipo))]
         public IHttpActionResult DeleteTipo(int id)
         {
 
@@ -106,7 +106,7 @@ namespace LabModulo03WebApi.Controllers
                 Console.WriteLine("Error al Borrar");
             }
 
-            return Ok();
+            return Ok(tipoBorrar);
         }
 
 
