@@ -20,7 +20,7 @@ namespace LabModulo03WebApi.Models
         {
 
             //TODO 002. DESHABILITAR LAZYLOADING DIRECTAMENTE EN EL MODELO
-            this.Configuration.LazyLoadingEnabled = false;
+           Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

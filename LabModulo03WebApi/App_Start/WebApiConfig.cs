@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using LabModulo03WebApi.Extensions;
 
 namespace LabModulo03WebApi
 {
@@ -18,6 +19,9 @@ namespace LabModulo03WebApi
 
             config.Formatters.Remove(config.Formatters.XmlFormatter);
 
+            config.MessageHandlers.Add(new LogHandler());
+
+            config.MessageHandlers.Add(new AuthMessageHandler());
 
             // Web API routes
             config.MapHttpAttributeRoutes();

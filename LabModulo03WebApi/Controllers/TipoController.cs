@@ -8,23 +8,27 @@ using System.Runtime.CompilerServices;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Description;
+using LabModulo03WebApi.Extensions;
 using LabModulo03WebApi.Models;
 
 namespace LabModulo03WebApi.Controllers
 {
     [EnableCors(origins:"*", headers:"*", methods:"*")]
+    [LogFiltro]
+    [Authorize]
     public class TipoController : ApiController
     {
         public Concesionario20Entities db= new Concesionario20Entities();
-        
-        
 
+
+       [AllowAnonymous]
         public List<Tipo> GetTipos()
         {
             return db.Tipo.ToList();
         }
 
         [ResponseType(typeof(Tipo))]
+        [Authorize(Roles = "Admin")]
         public IHttpActionResult GetTipos(int id)
         {
             //var a=db.Tipo.Find(id);
