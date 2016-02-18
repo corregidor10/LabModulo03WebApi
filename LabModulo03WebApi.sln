@@ -23,6 +23,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebLab03", "..\..\..\Docume
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "51868"
+		SlnRelativePath = "..\..\..\Documents\Visual Studio 2015\Projects\WebLab03\"
 	EndProjectSection
 EndProject
 Global
